@@ -2,80 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Visit Taniti | Food</title>
+    <title>Visit Taniti | Dining</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
     <h1>Visit Taniti</h1>
+
     <nav>
         <a href="index.html">Home</a>
-        <a href="food.html" class="active">Food</a>
-        <a href="amenities.html">Amenities</a>
+        <a href="food.html" class="active">Dining</a>
+        <a href="amenities.html">Activities</a>
         <a href="transportation.html">Transportation</a>
         <a href="lodging.html">Lodging & Hotels</a>
         <a href="entertainment.html">Entertainment</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
     </nav>
+
+    <form class="search-form">
+        <input type="text" placeholder="Search...">
+        <button type="submit">🔍</button>
+    </form>
 </header>
 
-<main>
-    <section class="hero">
-        <h2>Dining in Taniti</h2>
-    </section>
+<!-- Page Banner -->
+<section class="hero-banner">
+    <div class="hero-overlay">
+        <h1>Dining in Taniti</h1>
+    </div>
+    <img src="images/dining.jpg" alt="Local dining in Taniti" class="banner-img">
+</section>
 
-    <p>
-        Taniti offers a wide range of dining options, including local island
-        cuisine, family-friendly restaurants, and international flavors.
+
+<main class="container">
+
+    <h2 class="page-title"></h2>
+
+    <p class="intro-text">
+        Taniti offers a flavorful dining scene that reflects its island roots and growing
+        international influence. Visitors can enjoy everything from freshly caught local
+        seafood to familiar American favorites and bold Pan-Asian cuisine.
     </p>
 
-    <br>
-
     <div class="card-grid">
+
         <div class="card">
-            <img alt="Restaurant placeholder">
-            <h3>Island Grill</h3>
-            <p>Fresh seafood and local favorites.</p>
-            <button>Learn More</button>
+            <img src="images/local-dish.jpg" alt="Local fish and rice dish">
+            <h3>Local Cuisine</h3>
+            <p>
+                Five restaurants specialize in traditional Tanitian meals, featuring fresh
+                fish, rice, tropical fruits, and locally sourced ingredients.
+            </p>
+            <button>View Options</button>
         </div>
 
         <div class="card">
-            <img alt="Restaurant placeholder">
-            <h3>Family Café</h3>
-            <p>Kid-friendly meals and relaxed dining.</p>
-            <button>Learn More</button>
+            <img src="images/american-food.jpg" alt="American-style meals">
+            <h3>American Favorites</h3>
+            <p>
+                Three restaurants serve American-style meals, including burgers, grilled
+                dishes, and comfort foods familiar to many travelers.
+            </p>
+            <button>View Options</button>
         </div>
 
         <div class="card">
-            <img alt="Restaurant placeholder">
-            <h3>Ocean View Bistro</h3>
-            <p>Casual dining with scenic views.</p>
-            <button>Learn More</button>
+            <img src="images/asian-food.jpg" alt="Pan-Asian cuisine">
+            <h3>Pan-Asian Cuisine</h3>
+            <p>
+                Two restaurants offer Pan-Asian cuisine, blending flavors from across Asia
+                with fresh island ingredients.
+            </p>
+            <button>View Options</button>
         </div>
+
     </div>
 </main>
 
 <footer class="site-footer">
-  <div class="footer-content">
     <p><strong>Taniti Tourism</strong></p>
     <p>&copy; 2026 Taniti Island. All rights reserved.</p>
 
-    <nav class="footer-nav">
-      <a href="food.html">Food</a>
-      <a href="lodging.html">Lodging</a>
-      <a href="transportation.html">Transportation</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="social-icons">
+        <img src="images/facebook.png" alt="Facebook">
+        <img src="images/instagram.jpg" alt="Instagram">
+        <img src="images/x.jpg" alt="Twitter">
+    </div>
 
     <p class="footer-note">
-      This website is a student project created for educational purposes.
+        This website is a student project created for educational purposes.
     </p>
-  </div>
+
+    
+        <!-- Back to Top Button -->
+        <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+            Back to Top
+        </button>
 </footer>
-
-
 </body>
 </html>
-
