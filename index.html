@@ -5,7 +5,8 @@
     <title>Visit Taniti | Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body class="home">
 
 <!-- Header -->
 <header>
@@ -15,10 +16,9 @@
     <nav>
         <a href="index.html" class="active">Home</a>
         <a href="food.html">Dining</a>
-        <a href="amenities.html">Activities</a>
         <a href="transportation.html">Transportation</a>
-        <a href="lodging.html">Lodging & Hotels</a>
-        <a href="entertainment.html">Entertainment</a>
+        <a href="lodging.html">Lodging</a>
+        <a href="entertainment.html">Things To Do</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
     </nav>
@@ -31,18 +31,18 @@
 </header>
 
 <!-- Hero Banner -->
-<!-- Hero Banner with overlay text -->
 <div class="hero-banner">
-    <img src="images/beach-sunset.jpg" alt="Discover the Island of Taniti" class="banner-img">
+    <img src="images/beach-sunset.jpg" alt="Discover the Island of Taniti">
     <div class="hero-overlay">
         <h1>Discover the Island of Taniti</h1>
     </div>
 </div>
 
-
 <!-- Main Content -->
-<main class="container">
-    <p>
+<main>
+
+    <!-- Intro paragraph -->
+    <p class="intro-text">
         Small but full of surprises, Taniti is a tropical Pacific island spanning less than 500 square miles. 
         Its landscapes are wonderfully diverse, from sandy and rocky beaches to a safe harbor, lush rainforests, 
         and a mountainous interior featuring a small active volcano. Home to around 20,000 residents, the island 
@@ -50,27 +50,38 @@
     </p>
 
     <!-- Cards -->
-    <div class="card-grid">
+    <div class="card-grid home">
+
         <div class="card">
             <img src="images/beach-dining.jpg" alt="Dining Image">
             <h3>Local Dining</h3>
-            <p>From fresh local fish and rice to hearty American classics and flavorful Pan-Asian dishes, Taniti’s ten restaurants make every meal an adventure for your taste buds!</p>
-            <button>Learn More</button>
+
+            <p>From fresh local fish and rice to hearty American classics and flavorful Pan-Asian dishes, 
+                Taniti’s ten restaurants make every meal an adventure for your taste buds!
+            </p>
+            <button onclick="location.href='food.html'">Learn More</button>
         </div>
 
         <div class="card">
             <img src="images/island-lodging.jpg" alt="Lodging Image">
             <h3>Lodging</h3>
-            <p>Taniti offers a range of lodging options to fit every traveler’s needs. Whether you seek luxury, charm, or affordability, every accommodation is government-regulated and routinely inspected for quality and safety.</p>
+            <p>Taniti offers a range of lodging options to fit every traveler’s needs. 
+                Whether you seek luxury, charm, or affordability, every accommodation is 
+                government-regulated and routinely inspected for quality and safety.
+            </p>
             <button>View Details</button>
         </div>
 
         <div class="card">
             <img src="images/entertainment.jpg" alt="Entertainment Image">
             <h3>Entertainment</h3>
-            <p>Adventure or relaxation — Taniti has it all! Explore volcano trails, zipline through the canopy, or unwind by sparkling waters, while soaking in the island’s lively culture and stunning scenery.</p>
-            <button>Explore</button>
+            <p>Adventure or relaxation — Taniti has it all! Explore volcano trails, 
+                zipline through the canopy, or unwind by sparkling waters, while soaking in 
+                the island’s lively culture and stunning scenery.
+            </p>
+            <button onclick="location.href='entertainment.html'">Explore</button>
         </div>
+
     </div>
 </main>
 
@@ -95,10 +106,13 @@
         <p class="footer-note">
             This website is a student project created for educational purposes.
         </p>
-
-        <!-- Back to Top Button -->
-        <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-            Back to Top
-        </button>
     </div>
 </footer>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+    Back to Top
+</button>
+
+</body>
+</html>

@@ -3,26 +3,27 @@ html, body {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-}
-
-body {
-    flex-direction: column;
+    display: block;
 }
 
 main {
     flex: 1; /* pushes footer to bottom */
-    padding: 20px;
+    padding: 20px 40px;
+    width: 100%;            /* add this */
+    max-width: none;        /* remove any limit */
+    margin: 0 auto;      /* center horizontally */
+    box-sizing: border-box; /* include padding in width */
 }
 
 /* --- Intro Paragraph --- */
-main p {
-    max-width: 1000px;       /* limits paragraph width */
-    margin: 30px auto;      /* centers horizontally and adds vertical spacing */
+.intro-text {
+    max-width: 1500px;       /* limits paragraph width */
+    margin: 20px auto 40px auto;      /* centers horizontally and adds vertical spacing */
     text-align: center;     /* centers the text */
     line-height: 1.6;       /* makes it easier to read */
     font-size: 1.15em;       /* slightly larger for readability */
+    padding: 0 20px;
+    color: #333;
 }
 
 /* --- Header Layout --- */
@@ -122,9 +123,23 @@ header nav a.active {
 .hero-banner {
     width: 100%;
     flex: 0 0 auto;       /* prevent stretching */
-    height: 350px;         /* banner height */
-    position: relative;    /* needed for overlay positioning */
+    height: 500px;         /* banner height */
+    object-position: center bottom; /* <-- key change */
     overflow: hidden;
+    filter: brightness(1.15); /* slightly brighten banner */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    body.lodging .hero-banner.lodging-banner {
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    body.lodging .hero-banner.lodging-banner {
+        height: 200px;
+    }
 }
 
 .hero-banner img {
@@ -134,15 +149,19 @@ header nav a.active {
     display: block;
 }
 
-/* --- Overlay Text --- */
+/* ---Hero Overlay Text --- */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0); /* remove overlay color completely */
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.25)
+    );
     display: flex;
+    padding: 60px 20px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -152,106 +171,204 @@ header nav a.active {
 
 .hero-overlay h1 {
     color: white;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* makes text readable over image */
+    text-shadow: 0 3px 8px rgba(0,0,0,0.45); /* makes text readable over image */
+    letter-spacing: 1px;
+    font-size: 2.5em;
 }
 
-
-/* --- Cards --- */
-.container {
-    max-width: 1150px;       /* limits content width */
-    margin: 0 auto;
-    padding: 20px 20px 60px 20px;  /* extra bottom padding for spacing before footer */
-}
-
-/* --- Card Grid --- */
+/* ===== Base Card Grid ===== */
 .card-grid {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;    /* equal height cards in a row */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px 24px; /* vertical | horizontal */
+    max-width: 1400px;
+    margin: 60px auto; /* space above & below the grid */
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-/* --- Individual Cards --- */
-.card {
+.card{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    width: 360px;            /* default width for desktop */
-    background-color: #d0e7ff;
-    border-radius: 8px;
+    background-color: #b8dcfc;
+    border-radius: 10px;
+    margin-bottom: 32px;     /* vertical space between cards */
     padding: 20px;
-    box-sizing: border-box;
-    transition: transform 0.2s ease, background-color 0.3s;
-    flex: 1 1 auto;          /* allows cards to shrink/grow if needed */
+    text-align: center;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    height: auto;
 }
 
+/* Home page grid */
+.card-grid.home {
+ display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    row-gap: 60px;    /* vertical spacing between rows */
+    column-gap: 40px; /* horizontal spacing */
+    margin: 40px auto;
+}
+
+/* Dining page grid */
+.card-grid.dining {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(260px, 1fr));
+    row-gap: 50px;
+    column-gap: 40px;
+    margin: 40px auto;
+}
+
+/* Transportation Cards Grid */
+.card-grid.transportation {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(260px, 1fr));
+    row-gap: 50px;
+    column-gap: 40px;
+    margin: 40px auto;
+}
+
+/*Activities page grid*/
+.card-grid.activities {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 50px;
+    column-gap: 40px;
+    margin: 40px auto;
+}
+
+/* Lodging page grid*/
+.card-grid.lodging {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(260px, 1fr));
+    row-gap: 50px;
+    column-gap: 40px;
+    margin: 40px auto;
+}
+
+/* Card images */
 .card img {
     width: 100%;
     height: auto;
-    object-fit: contain;
-    border-radius: 5px;
-    display: block;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;           /* spacing between title, description, button */
+    padding: 20px;
+    text-align: center;
 }
 
 /* hover effect for cards */
 .card:hover {
-    transform: translateY(-5px);
-    background-color: #b0d4ff; /* slightly darker blue on hover */
+    transform: scale(1.05) translateY(-6px);
+    background: linear-gradient(to right, #0066cc, #004c99);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
 }
 
 /* --- Card Buttons --- */
 .card button {
-    background-color: #4a9cee;  /* same blue as header/footer */
+    margin-top: auto;            /* pushes button to bottom if card content varies */
+    background: linear-gradient(to right, #4a9cee, #0066cc);
+    letter-spacing: 0.5px;
     color: white;
     border: none;
-    border-radius: 12px;
-    padding: 10px 0;            /* vertical padding, horizontal auto */
+    border-radius: 10px;
+    padding: 12px 0;            /* vertical padding, horizontal auto */
     width: 100%;                 /* makes all buttons same width as card */
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-    margin-top: auto;            /* pushes button to bottom if card content varies */
+    
 }
 
-/* Hover effect */
 .card button:hover {
-    background-color: #0066cc;  /* darker blue on hover */
+    background-color: #0066cc;
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+    
+/* --- Responsive Breakpoints --- */
+
+/* Mobile responsiveness */
+@media (max-width: 1100px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*Home mobile*/
+@media (max-width: 1100px) {
+    .card-grid.home {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .card-grid.home {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*Lodging mobile*/
+/* Tablets: 2 cards per row */
+@media (max-width: 1024px) {
+    .card-grid.lodging {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 40px;
+        column-gap: 30px;
+    }
+}
+
+/* Mobile: 1 card per row */
+@media (max-width: 600px) {
+    .card-grid.lodging {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+        padding: 0 15px;
+    }
+}
+
+/* Container for availability button */
+.check-availability {
+    text-align: center;    /* centers the button */
+    margin: 40px 0;        /* space above and below */
+}
+
+.check-availability button {
+    background: linear-gradient(to right, #4a9cee, #0066cc);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.check-availability button:hover {
+    background-color: #0066cc;
     transform: scale(1.05);
 }
 
-/* --- Responsive Breakpoints --- */
-
-/* Medium screens (tablets) */
-@media (max-width: 992px) {
-    .card {
-        width: 300px;        /* slightly smaller cards */
-    }
-}
-
-/* Small screens (phones) */
-@media (max-width: 768px) {
-    .card-grid {
-        flex-direction: column;  /* stack cards vertically */
-        gap: 20px;
-    }
-
-    .card {
-        width: 100%;          /* full width of container */
-        max-width: 400px;     /* optional: prevent too wide on bigger phones */
-        margin: 0 auto;       /* center card */
-    }
-}
-
 /* --- Footer --- */
-/* Footer container */
 .site-footer {
     background-color: #4a9cee;
     color: white;
     padding: 30px 20px;
     width: 100%;
     box-sizing: border-box;
-
     display: flex;           /* flex container */
     flex-direction: column;  /* stack text/socials vertically */
     align-items: center;     /* centers all child elements horizontally */
@@ -260,7 +377,6 @@ header nav a.active {
 
 .footer-content {
     position: relative; /* needed for absolute positioning */
-    text-align: left;   /* remove center alignment that may interfere */
 }
 
 /* Footer text centered */
@@ -268,26 +384,6 @@ header nav a.active {
 .footer-note {
     text-align: center;  /* centers all paragraphs inside footer */
     margin: 5px 0;
-}
-
-.back-to-top {
-    position: fixed;    /* always visible */
-    bottom: 20px;
-    right: 20px;
-    background-color: #4a9cee;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s, transform 0.2s;
-    z-index: 1000;
-}
-
-.back-to-top:hover {
-    background-color: #0066cc;
-    transform: scale(1.05);
 }
 
 /* Social icons centered */
@@ -332,17 +428,4 @@ header nav a.active {
     background-color: #0066cc;
     transform: scale(1.05);
 }
-.page-title {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.intro-text {
-    max-width: 800px;
-    margin: 20px auto 40px auto;
-    text-align: center;
-}
-
-
-
 

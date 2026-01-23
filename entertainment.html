@@ -2,80 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Visit Taniti | Home</title>
+    <title>Visit Taniti | Things To Do</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-content">
 
 <header>
     <h1>Visit Taniti</h1>
+
     <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="food.html">Food</a>
-        <a href="amenities.html">Amenities</a>
+        <a href="index.html">Home</a>
+        <a href="food.html">Dining</a>
         <a href="transportation.html">Transportation</a>
-        <a href="lodging.html">Lodging & Hotels</a>
-        <a href="entertainment.html">Entertainment</a>
+        <a href="lodging.html">Lodging</a>
+        <a href="entertainment.html">Things To Do</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
     </nav>
+
+    <form class="search-form">
+        <input type="text" placeholder="Search...">
+        <button type="submit">🔍</button>
+    </form>
 </header>
 
-<main>
-    <section class="hero">
-        <h2>Discover the Island of Taniti</h2>
-    </section>
+<!-- Banner -->
+<section class="hero-banner">
+    <div class="hero-overlay">
+        <h1>Things to Do in Taniti</h1>
+    </div>
+    <img src="images/activities-banner.jpg" alt="Outdoor activities on Taniti" class="banner-img">
+</section>
 
-    <p>
-        Taniti is a small tropical island known for its beautiful beaches,
-        friendly culture, and family-friendly attractions. Whether you are
-        visiting for adventure or relaxation, Taniti has something for everyone.
+<main class="activities">
+
+    <p class="intro-text">
+        Taniti offers activities for every kind of traveler. From breathtaking natural
+        landscapes to guided tours and cultural attractions, visitors can explore the
+        island at their own pace while enjoying its rich history and vibrant atmosphere.
     </p>
 
-    <br>
-
     <div class="card-grid">
+
         <div class="card">
-            <img alt="Food image placeholder">
-            <h3>Local Dining</h3>
-            <p>Explore a variety of restaurants perfect for families.</p>
+            <img src="images/rainforest.jpg" alt="Rainforest activities">
+            <h3>Rainforest Adventures</h3>
+            <p>Explore lush tropical rainforests through guided hikes, zip-lining, and wildlife viewing.</p>
             <button>Learn More</button>
         </div>
 
         <div class="card">
-            <img alt="Lodging image placeholder">
-            <h3>Lodging</h3>
-            <p>Comfortable hotels and resorts for all budgets.</p>
-            <button>View Details</button>
+            <img src="images/beaches.jpg" alt="Taniti beaches">
+            <h3>Beaches</h3>
+            <p>Relax on white sandy beaches surrounding Yellow Leaf Bay or enjoy swimming and snorkeling.</p>
+            <button>Learn More</button>
         </div>
 
         <div class="card">
-            <img alt="Entertainment image placeholder">
-            <h3>Entertainment</h3>
-            <p>Attractions and activities for all ages.</p>
-            <button>Explore</button>
+            <img src="images/helicopter.jpg" alt="Helicopter tour">
+            <h3>Helicopter Tours</h3>
+            <p>Take to the skies for unforgettable aerial views of Taniti’s volcano, coastlines, and forests.</p>
+            <button>Learn More</button>
         </div>
+
+        <div class="card">
+            <img src="images/volcano.jpg" alt="Active volcano">
+            <h3>Volcano Exploration</h3>
+            <p>Visit Taniti’s small active volcano and enjoy guided hikes with stunning panoramic views.</p>
+            <button>Learn More</button>
+        </div>
+
+        <div class="card">
+            <img src="images/nightlife.jpg" alt="Local restaurants">
+            <h3>Restaurants & Nightlife</h3>
+            <p>Enjoy local dining, pubs, a microbrewery, and evening entertainment throughout the island.</p>
+            <button>Learn More</button>
+        </div>
+
+        <div class="card">
+            <img src="images/fishing.jpg" alt="Fishing tour">
+            <h3>Fishing Tours</h3>
+            <p>Join chartered fishing tours led by experienced local guides in surrounding waters.</p>
+            <button>Learn More</button>
+        </div>
+
+        <div class="card">
+            <img src="images/bus-tour.jpg" alt="Bus tour">
+            <h3>Island Bus Tours</h3>
+            <p>Take guided bus or boat tours to see Taniti City, Merriton Landing, and scenic coastlines.</p>
+            <button>Learn More</button>
+        </div>
+
+        <div class="card">
+            <img src="images/museum.jpg" alt="History museum">
+            <h3>History Museum</h3>
+            <p>Visit the local museum to learn about Taniti’s culture, history, and indigenous heritage.</p>
+            <button>Learn More</button>
+        </div>
+
     </div>
 </main>
 
 <footer class="site-footer">
-  <div class="footer-content">
     <p><strong>Taniti Tourism</strong></p>
     <p>&copy; 2026 Taniti Island. All rights reserved.</p>
 
-    <nav class="footer-nav">
-      <a href="food.html">Food</a>
-      <a href="lodging.html">Lodging</a>
-      <a href="transportation.html">Transportation</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="social-icons">
+        <img src="images/facebook.png" alt="Facebook">
+        <img src="images/instagram.jpg" alt="Instagram">
+        <img src="images/x.jpg" alt="Twitter">
+    </div>
 
     <p class="footer-note">
-      This website is a student project created for educational purposes.
+        This website is a student project created for educational purposes.
     </p>
-  </div>
 </footer>
 
-
+        <!-- Back to Top Button -->
+        <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+            Back to Top
+        </button>
 </body>
 </html>
+

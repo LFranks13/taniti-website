@@ -2,80 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Visit Taniti | Home</title>
+    <title>Visit Taniti | Lodging</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body class="lodging">
+
+<!-- Header -->
 <header>
     <h1>Visit Taniti</h1>
+
+    <!-- Navigation -->
     <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="food.html">Food</a>
-        <a href="amenities.html">Amenities</a>
+        <a href="index.html">Home</a>
+        <a href="food.html">Dining</a>
         <a href="transportation.html">Transportation</a>
-        <a href="lodging.html">Lodging & Hotels</a>
-        <a href="entertainment.html">Entertainment</a>
+        <a href="lodging.html" class="active">Lodging</a>
+        <a href="entertainment.html">Things To Do</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
     </nav>
+
+    <!-- Search -->
+    <form class="search-form">
+        <input type="text" placeholder="Search...">
+        <button type="submit">🔍</button>
+    </form>
 </header>
 
-<main>
-    <section class="hero">
-        <h2>Discover the Island of Taniti</h2>
-    </section>
+<!-- Hero Banner -->
+<div class="hero-banner">
+    <img src="images/lodging.jpg" alt="Lodging on Taniti">
+    <div class="hero-overlay">
+        <h1>Stay on Taniti</h1>
+    </div>
+</div>
 
-    <p>
-        Taniti is a small tropical island known for its beautiful beaches,
-        friendly culture, and family-friendly attractions. Whether you are
-        visiting for adventure or relaxation, Taniti has something for everyone.
+<!-- Main Content -->
+<main>
+    <p class="intro-text">
+        Taniti offers a range of lodging options, from cozy cabins and boutique inns to luxury resorts. 
+        Each accommodation is carefully inspected and provides a safe, comfortable stay with island charm.
     </p>
 
-    <br>
+    <!-- Lodging Cards -->
+    <div class="card-grid lodging">
 
-    <div class="card-grid">
         <div class="card">
-            <img alt="Food image placeholder">
-            <h3>Local Dining</h3>
-            <p>Explore a variety of restaurants perfect for families.</p>
-            <button>Learn More</button>
+            <img src="images/4star.jpg" alt="4 Star Resort Hotel">
+            <h3>Hotel</h3>
+            <p>Coral Bay Resort - Luxury rooms with ocean views, pools, spa, and fine dining for a relaxing island stay.</p>
+            <button>Check Availability</button>
         </div>
 
         <div class="card">
-            <img alt="Lodging image placeholder">
-            <h3>Lodging</h3>
-            <p>Comfortable hotels and resorts for all budgets.</p>
-            <button>View Details</button>
+            <img src="images/family-hotel.jpg" alt="Small Family-Owned Hotel">
+            <h3>Family-Owned Hotels</h3>
+            <p>Cozy rooms with friendly service, just steps from the beach and local attractions.</p>
+            <button>Check Availability</button>
         </div>
 
         <div class="card">
-            <img alt="Entertainment image placeholder">
-            <h3>Entertainment</h3>
-            <p>Attractions and activities for all ages.</p>
-            <button>Explore</button>
+            <img src="images/bnb.jpg" alt="Bed & Breakfast">
+            <h3>Bed and Breakfast</h3>
+            <p>Charming, family-run guesthouses across the island, each offering cozy rooms and a freshly prepared breakfast.</p>
+            <button>Check Availability</button>
         </div>
+
+        <div class="card">
+            <img src="images/hostel.jpg" alt="Hostel">
+            <h3>Hostel</h3>
+            <p>Budget-friendly lodging for adventurous travelers, with easy access to local beaches, hikes, and island experiences.</p>
+            <button>Check Availability</button>
+        </div>
+
     </div>
+
 </main>
 
+<!-- Footer -->
 <footer class="site-footer">
-  <div class="footer-content">
-    <p><strong>Taniti Tourism</strong></p>
-    <p>&copy; 2026 Taniti Island. All rights reserved.</p>
+    <div class="footer-content">
+        <p><strong>Taniti Tourism</strong></p>
+        <p>&copy; 2026 Taniti Island. All rights reserved.</p>
 
-    <nav class="footer-nav">
-      <a href="food.html">Food</a>
-      <a href="lodging.html">Lodging</a>
-      <a href="transportation.html">Transportation</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <img src="images/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <img src="images/instagram.jpg" alt="Instagram">
+            </a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                <img src="images/x.jpg" alt="Twitter">
+            </a>
+        </div>
 
-    <p class="footer-note">
-      This website is a student project created for educational purposes.
-    </p>
-  </div>
+        <p class="footer-note">
+            This website is a student project created for educational purposes.
+        </p>
+    </div>
 </footer>
 
+<!-- Back to Top Button -->
+<button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+    Back to Top
+</button>
 
 </body>
 </html>
