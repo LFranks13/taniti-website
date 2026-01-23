@@ -2,64 +2,183 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Visit Taniti | Home</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Taniti | Under Construction</title>
+    <style>
+        /* ===== Global Styles ===== */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #b8dcfc, #ffffff); /* light tropical sky */
+            color: #004c99; /* main Taniti blue */
+        }
+
+        /* ===== Header ===== */
+        header {
+            background: #0066cc;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #f28c28; /* highlight color */
+        }
+
+        /* ===== Hero Section ===== */
+        .hero-banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background: linear-gradient(to bottom, #b8dcfc, #ffffff);
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-banner h1 {
+            font-size: 2.5rem;
+            color: #004c99;
+        }
+
+        /* ===== Under Construction Content ===== */
+        .construction-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .construction-container h2 {
+            font-size: 2.2rem;
+            color: #f28c28; /* construction orange */
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .construction-container p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        /* ===== Footer ===== */
+        .site-footer {
+            background: #004c99;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .site-footer p {
+            margin: 5px 0;
+        }
+
+        .site-footer .social-icons a {
+            margin: 0 8px;
+            display: inline-block;
+        }
+
+        .site-footer .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-banner h1 {
+                font-size: 1.8rem;
+            }
+
+            .construction-container h2 {
+                font-size: 1.8rem;
+            }
+
+            .construction-container p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
+<!-- Header -->
 <header>
     <h1>Visit Taniti</h1>
     <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="food.html">Food</a>
-        <a href="amenities.html">Amenities</a>
+        <a href="index.html">Home</a>
+        <a href="food.html">Dining</a>
         <a href="transportation.html">Transportation</a>
-        <a href="lodging.html">Lodging & Hotels</a>
-        <a href="entertainment.html">Entertainment</a>
+        <a href="lodging.html">Lodging</a>
+        <a href="entertainment.html">Things To Do</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
     </nav>
 </header>
 
-<main>
-    <section class="hero">
-        <h2>Discover the Island of Taniti</h2>
-    </section>
+<!-- Hero Section -->
+<div class="hero-banner">
+    <h1>🚧 Under Construction 🚧</h1>
+</div>
 
-    <p>
-        Taniti is a small tropical island known for its beautiful beaches,
-        friendly culture, and family-friendly attractions. Whether you are
-        visiting for adventure or relaxation, Taniti has something for everyone.
-    </p>
+<!-- Under Construction Content -->
+<div class="construction-container">
+    <h2>Coming Soon!</h2>
+    <p>We’re working hard to bring you the best of Taniti! 🌴 Check back soon to explore this page and all the island has to offer.  
+    In the meantime, use the links above to explore other pages on the site.</p>
+</div>
 
-    <br>
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <p><strong>Taniti Tourism</strong></p>
+        <p>&copy; 2026 Taniti Island. All rights reserved.</p>
 
-    <div class="card-grid">
-        <div class="card">
-            <img alt="Food image placeholder">
-            <h3>Local Dining</h3>
-            <p>Explore a variety of restaurants perfect for families.</p>
-            <button>Learn More</button>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <img src="images/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <img src="images/instagram.jpg" alt="Instagram">
+            </a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                <img src="images/x.jpg" alt="Twitter">
+            </a>
         </div>
 
-        <div class="card">
-            <img alt="Lodging image placeholder">
-            <h3>Lodging</h3>
-            <p>Comfortable hotels and resorts for all budgets.</p>
-            <button>View Details</button>
-        </div>
-
-        <div class="card">
-            <img alt="Entertainment image placeholder">
-            <h3>Entertainment</h3>
-            <p>Attractions and activities for all ages.</p>
-            <button>Explore</button>
-        </div>
+        <p class="footer-note">
+            This website is a student project created for educational purposes.
+        </p>
     </div>
-</main>
-
-<footer>
-    <p>&copy; 2026 Visit Taniti</p>
 </footer>
 
 </body>
