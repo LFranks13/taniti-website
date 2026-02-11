@@ -34,7 +34,7 @@ main {
 header {
     background-color: #4a9cee; /* matches footer */
     color: white;
-    padding: 20px;
+    padding: 16px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -56,8 +56,11 @@ header nav {
 header nav a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 18px;
     border-radius: 12px;
+    font-size: 0.95rem;     /* locks consistency */
+    line-height: 1;         /* prevents tall links */
+    white-space: nowrap;    /* prevents “Things To Do” from wrapping */
     transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
 
@@ -80,6 +83,40 @@ header nav a.active:hover {
     transform: none;
 }
 
+/* --- Responsive Breakpoints --- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header h1 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  header nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  header nav a {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .search-form {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .search-form input {
+    min-width: 0;
+    width: 70%;
+  }
+}
 
 /* --- Search Form --- */
 .search-form {
@@ -110,7 +147,7 @@ header nav a.active:hover {
     transform: scale(1.05);
 }
 
-/* --- Responsive tweaks --- */
+/* --- Responsive Breakpoints --- */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -133,47 +170,84 @@ header nav a.active:hover {
 
 /* --- Hero Banner --- */
 .hero-banner {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    object-position: center bottom;
-    overflow: hidden;
-    filter: brightness(1.15);
+  width: 100%;
+  height: 480px;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Make sure the image fills the banner */
 .hero-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;      /* fills banner without distortion */
-    object-position: center; /* restores natural crop */
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-/* ---Hero Overlay Text --- */
+/* TRUE overlay (this is the missing piece) */
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.55),
-        rgba(0, 0, 0, 0.25)
-    );
-    display: flex;
-    padding: 60px 20px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    z-index: 2; /* <-- ensure overlay is above the image */
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;     /* stacks title + button */
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.30);
+  padding: 0 20px;
 }
 
-.hero-overlay h1 {
-    color: white;
-    text-shadow: 0 3px 8px rgba(0,0,0,0.45); /* makes text readable over image */
-    letter-spacing: 1px;
-    font-size: 2.5em;
+/* Fix selector typo + unify text */
+.hero-overlay h1,
+.hero-overlay h2,
+.hero-overlay p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+/* Button */
+.hero-btn {
+  display: inline-block;
+  background: #4a9cee;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: #0066cc;
+  transform: scale(1.05);
+}
+
+/* Mobile + Large screens (hero only) */
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 250px;
+  }
+
+  .hero-overlay h1,
+  .hero-overlay h2,
+  .hero-overlay p {
+    font-size: 1.6rem;
+  }
+
+  .hero-btn {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero-banner {
+    height: 520px;
+  }
 }
 
 /* ===== Base Card Grid ===== */
@@ -187,7 +261,7 @@ header nav a.active:hover {
     box-sizing: border-box;
 }
 
-.card{
+.card {
     display: flex;
     flex-direction: column;
     background-color: #b8dcfc;
@@ -202,8 +276,8 @@ header nav a.active:hover {
 /* Home page grid */
 .card-grid.home {
  display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
-    row-gap: 60px;    /* vertical spacing between rows */
+    grid-template-columns: repeat(4, minmax(260px, 1fr));
+    row-gap: 50px;    /* vertical spacing between rows */
     column-gap: 40px; /* horizontal spacing */
     margin: 40px auto;
 }
@@ -253,13 +327,45 @@ header nav a.active:hover {
     margin: 40px auto;
 }
 
+/* --- Responsive Breakpoints --- */
+@media (max-width: 1100px) {
+  .card-grid,
+  .card-grid.home,
+  .card-grid.dining,
+  .card-grid.transportation,
+  .card-grid.activities,
+  .card-grid.lodging,
+  .card-grid.faq {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid,
+  .card-grid.home,
+  .card-grid.dining,
+  .card-grid.transportation,
+  .card-grid.activities,
+  .card-grid.lodging,
+  .card-grid.faq {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 0 14px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
+
 /* Card images */
 .card img {
     width: 100%;
-    height: auto;
+    height: 200px;
     object-fit: cover;
+    object-position: center;
     border-radius: 10px;
-    margin-bottom: 16px;
+    display: block;
 }
 
 .card-content {
@@ -284,6 +390,12 @@ header nav a.active:hover {
     background: linear-gradient(to right, #0066cc, #004c99);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
     color: #ffffff;
+}
+
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+  }
 }
 
 /* Force all text inside to white */
@@ -313,53 +425,6 @@ header nav a.active:hover {
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-}
-    
-/* --- Responsive Breakpoints --- */
-
-/* Mobile responsiveness */
-@media (max-width: 1100px) {
-    .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .card-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/*Home mobile*/
-@media (max-width: 1100px) {
-    .card-grid.home {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .card-grid.home {
-        grid-template-columns: 1fr;
-    }
-}
-
-/*Lodging mobile*/
-/* Tablets: 2 cards per row */
-@media (max-width: 1024px) {
-    .card-grid.lodging {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 40px;
-        column-gap: 30px;
-    }
-}
-
-/* Mobile: 1 card per row */
-@media (max-width: 600px) {
-    .card-grid.lodging {
-        grid-template-columns: 1fr;
-        row-gap: 30px;
-        padding: 0 15px;
-    }
 }
 
 /* Container for availability button */
@@ -450,4 +515,57 @@ header nav a.active:hover {
     background-color: #0066cc;
     transform: scale(1.05);
 }
+.contact-section {
+  text-align: center;
+}
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.contact-form button {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #0066cc;
+  color: #fff;
+  cursor: pointer;
+}
+.contact-line {
+  font-size: 1.05rem;  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+.contact-line strong {
+  margin-right: 4px;
+}
+
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 600px) {
+  input,
+  textarea,
+  button {
+    font-size: 16px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

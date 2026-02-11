@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visit Taniti | Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,7 +20,8 @@
         <a href="transportation.html">Transportation</a>
         <a href="lodging.html">Lodging</a>
         <a href="entertainment.html">Things To Do</a>
-        <a href="faq.html">FAQ & Contact</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
     <!-- Search -->
@@ -30,12 +32,13 @@
 </header>
 
 <!-- Hero Banner -->
-<div class="hero-banner">
-    <img src="images/beach-sunset.jpg" alt="Discover the Island of Taniti">
-    <div class="hero-overlay">
-        <h1>Discover the Island of Taniti</h1>
-    </div>
-</div>
+<section class="hero-banner">
+  <img src="images/beach-sunset.jpg" alt="Busy beach scene on Taniti" class="banner-img">
+  <div class="hero-overlay">
+    <h1>Discover the Island of Taniti</h1>
+    <a href="lodging.html" class="hero-btn">Book Now</a>
+  </div>
+</section>
 
 <!-- Main Content -->
 <main>
@@ -53,7 +56,7 @@
 
         <div class="card">
             <img src="images/beach-dining.jpg" alt="Dining Image">
-            <h3>Local Dining</h3>
+            <h2>Local Dining</h2>
 
             <p>From fresh local fish and rice to hearty American classics and flavorful Pan-Asian dishes, 
                 Taniti’s ten restaurants make every meal an adventure for your taste buds!
@@ -62,8 +65,18 @@
         </div>
 
         <div class="card">
+            <img src="images/transportation.jpg" alt="Transportation options on Taniti">
+            <h2>Transportation</h2>
+        
+            <p>Getting around Taniti is easy and convenient. Visitors can travel by taxi, bus,
+                rental car, bike, or on foot, with options available across the island.
+            </p>
+            <button onclick="location.href='transportation.html'">Get Around</button>
+        </div>
+
+        <div class="card">
             <img src="images/island-lodging.jpg" alt="Lodging Image">
-            <h3>Lodging</h3>
+            <h2>Lodging</h2>
             <p>Taniti offers a range of lodging options to fit every traveler’s needs. 
                 Whether you seek luxury, charm, or affordability, every accommodation is 
                 government-regulated and routinely inspected for quality and safety.
@@ -73,7 +86,7 @@
 
         <div class="card">
             <img src="images/entertainment.jpg" alt="Entertainment Image">
-            <h3>Entertainment</h3>
+            <h2>Entertainment</h2>
             <p>Adventure or relaxation — Taniti has it all! Explore volcano trails, 
                 zipline through the canopy, or unwind by sparkling waters, while soaking in 
                 the island’s lively culture and stunning scenery.
