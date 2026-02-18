@@ -466,6 +466,11 @@ header nav a.active:hover {
     position: relative; /* needed for absolute positioning */
 }
 
+.image-credit {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
 /* Footer text centered */
 .site-footer p,
 .footer-note {
